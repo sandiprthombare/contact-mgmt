@@ -1,0 +1,22 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 50%;
+  }
+  
+  /* td, th {
+    width: 25%;
+  } */
+
+  #contact-table{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 50px;
+  }
+
+  .mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }

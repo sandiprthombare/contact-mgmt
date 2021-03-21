@@ -1,0 +1,42 @@
+<h1 mat-dialog-title>New Contact</h1>
+<div mat-dialog-content >
+
+    <!-- <form id="contactForm" #form="form" [ng-form-model]="form">
+       -->
+       <!-- <form [formGroup]="contactForm" (ngSubmit)="onSubmit()"> -->
+        <form #myForm="ngForm">
+  <mat-form-field>
+    <mat-label>First Name</mat-label>
+    <input matInput [(ngModel)]="contact.firstName" required cdkFocusInitial class="form-control" pattern="^[a-zA-Z]{0,50}$" name="firstname" #firstname="ngModel">
+    <mat-error *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)">Please enter valid 2-50 characters alphabet</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Last Name</mat-label>
+    <input matInput [(ngModel)]="contact.lastName"  class="form-control" pattern="^[a-zA-Z]{0,50}$" name="lastName" #lastName="ngModel">
+    <mat-error *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">Please enter valid max 50 characters alphabet</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Phone Number</mat-label>
+    <input matInput [(ngModel)]="contact.phoneNo" required class="form-control"  name="phoneNo" pattern="\d{10}" maxlength="10" #phoneNo="ngModel">
+    <mat-error *ngIf="phoneNo.invalid && (phoneNo.dirty || phoneNo.touched)">Please enter valid 10 digit phone number</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="contact.email" class="form-control" required type="email" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" name="email" #email="ngModel">
+    <mat-error *ngIf="email.invalid && (email.dirty || email.touched)">Please enter valid email Id</mat-error>
+  </mat-form-field>
+  <label>Status:</label>
+  <mat-radio-group [(ngModel)]="contact.status" name="status">
+    <mat-radio-button value="Active">
+      Active
+    </mat-radio-button>
+    <mat-radio-button value="Inactive">
+      Inactive
+    </mat-radio-button>
+  </mat-radio-group>
+</form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="contact"  [disabled]="myForm.invalid" >{{contact.contactId==0?'Save':'Update'}}</button>
+</div>
