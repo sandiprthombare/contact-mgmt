@@ -12,7 +12,7 @@ The application is used to maintain the contact information with below functiona
 * Start service from https://github.com/sandiprthombare/contact-service
 
 ## Run contact-mgmt app
-* Set up angular cli with commands **Install angular cli npm install - g @angular/cli
+* Set up angular cli with commands **Install angular cli npm install - g @angular/cli**
 * go to project directory
 * Run command **npm install** this will install all required packages
 * Apply command to run project on dev server **ng serve --open
